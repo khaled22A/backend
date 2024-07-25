@@ -12,7 +12,7 @@ class commande extends Model
     protected $fillable =
     [
         'id_client',
-        'id_produit',
+        // 'id_produit',
         'num_commande',
         'date_commande',
         'statut'

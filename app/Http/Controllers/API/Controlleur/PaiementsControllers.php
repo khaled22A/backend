@@ -38,7 +38,7 @@ class PaiementsControllers extends Controller
         $pay= new paiement();
         $pay->id_client=$request->id_client;
         $pay->total=$request->total;
-        $pay->methode_paiement=$request->methode_paiement;
+        // $pay->methode_paiement=$request->methode_paiement;
         $pay->date_paiement=$currentDateTime;
         $pay->statut=$request->statut;
 
@@ -88,7 +88,7 @@ class PaiementsControllers extends Controller
         {
             $pay->id_client=$request->id_client;
             $pay->total=$request->total;
-            $pay->methode_paiement=$request->methode_paiement;
+            // $pay->methode_paiement=$request->methode_paiement;
             $pay->date_paiement=$currentDateTime;
             $pay->statut=$request->statut;
     

@@ -37,7 +37,7 @@ class CommandesControllers extends Controller
             // 'id_user' => 'required|integer|exists:users,id',
             'id_commune' => 'required|integer|exists:communes,id', 
             'nom' => 'required|string|max:255',
-            'prenom' => 'required||string|max:255',
+            'email' => 'required||string|unique',
             'telephone' => 'required|string|min:10|max:13', //|unique:clients,telephone',
             'adresse' => 'required|string|max:255',
             
@@ -63,7 +63,7 @@ class CommandesControllers extends Controller
         $randomCode = Str::random(10);
         $currentDateTime = Carbon::now();
         $com= Commande::create ([
-            'id_produit' =>$request->id_produit,
+            // 'id_produit' =>$request->id_produit,
             'id_client' => $clent->id,
             'num_commande' =>$randomCode,
             'date_commande'=>$currentDateTime,
@@ -101,7 +101,7 @@ class CommandesControllers extends Controller
         
         $data = Validator::make($request->all(), [
           'id_client' => 'required|integer|exists:clients,id',
-          'id_produit' => 'required|integer|exists:produits,id',
+        //   'id_produit' => 'required|integer|exists:produits,id',
             // 'num_commande' => 'required|string|unique:commandes,num_commande',
             // 'date_commande' => 'required|date ', 
             // 'date_livraison' => 'nullable|date:Y-M-D HH:MM:SS', 
@@ -120,7 +120,6 @@ class CommandesControllers extends Controller
             $randomCode = Str::random(10);
             $currentDateTime = Carbon::now();
             $com= Commande::create ([
-                'id_user' =>$request->id_user,
                 'id_client' => $clent->id,
                 'num_commande' =>$randomCode,
                 'date_commande'=>$currentDateTime,

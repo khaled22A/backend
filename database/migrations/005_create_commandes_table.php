@@ -14,13 +14,13 @@ return new class extends Migration
         Schema::create('commandes', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('id_client');
-            $table->unsignedBigInteger('id_produit');
+            // $table->unsignedBigInteger('id_produit');
             $table->string('num_commande');
             $table->dateTime('date_commande');
             $table->string('statut');
             $table->timestamps();
             $table->foreign('id_client')->references('id')->on('clients');
-            $table->foreign('id_produit')->references('id')->on('produits');
+            // $table->foreign('id_produit')->references('id')->on('produits');
 
         });
     }

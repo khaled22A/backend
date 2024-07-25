@@ -13,7 +13,7 @@ class paiement extends Model
     [
         'id_client',
         'total',
-        'methode_paiement',
+        // 'methode_paiement',
         'date_paiement',
         'statut',
 
